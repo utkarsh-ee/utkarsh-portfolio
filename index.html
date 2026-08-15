@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Utkarsh — Electronic Systems engineering portfolio. Embedded systems, electronics, hardware-software integration and technical projects.">
+  <meta name="theme-color" content="#0b0d0f">
+  <title>Utkarsh — Electronic Systems</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#0b0d0f; --panel:#111417; --panel-2:#15191d; --text:#f2f4f5;
+      --muted:#929aa2; --line:#252b30; --accent:#b8ff5a; --accent-2:#d7ff9f;
+      --max:1180px; --radius:20px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,system-ui,sans-serif;line-height:1.6}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:linear-gradient(rgba(255,255,255,.8) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.8) 1px,transparent 1px);background-size:40px 40px}
+    a{color:inherit;text-decoration:none}.wrap{max-width:var(--max);margin:auto;padding:0 28px}
+    nav{position:sticky;top:0;z-index:10;border-bottom:1px solid rgba(37,43,48,.8);backdrop-filter:blur(18px);background:rgba(11,13,15,.82)}
+    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
+    .mark{font-weight:800;letter-spacing:-.04em}.mark span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;font-size:13px;color:var(--muted)}.nav-links a:hover{color:var(--text)}
+    .nav-tag{font:12px "DM Mono",monospace;color:var(--muted);border:1px solid var(--line);padding:8px 11px;border-radius:999px}
+    .hero{min-height:calc(100vh - 72px);display:grid;align-items:center;padding:92px 0 80px}
+    .eyebrow{font:12px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.13em;color:var(--accent);margin-bottom:22px}
+    h1{font-size:clamp(58px,10vw,128px);line-height:.88;letter-spacing:-.075em;margin:0;max-width:920px}
+    .hero-grid{display:grid;grid-template-columns:1fr 280px;gap:60px;align-items:end}
+    .hero-copy{max-width:680px;margin-top:34px;font-size:18px;color:#b5bdc4}
+    .hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:12px 17px;border-radius:999px;border:1px solid var(--line);font-size:13px;font-weight:700}
+    .btn.primary{background:var(--text);color:var(--bg);border-color:var(--text)}.btn:hover{transform:translateY(-1px)}
+    .hero-spec{border-left:1px solid var(--line);padding-left:25px;font:12px "DM Mono",monospace;color:var(--muted)}
+    .hero-spec div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--line);gap:20px}
+    .hero-spec b{color:var(--text);font-weight:500;text-align:right}
+    section{padding:110px 0;border-top:1px solid var(--line)}
+    .section-head{display:grid;grid-template-columns:160px 1fr;gap:40px;margin-bottom:52px}
+    .section-no{font:12px "DM Mono",monospace;color:var(--accent)}h2{font-size:clamp(34px,5vw,64px);line-height:1;letter-spacing:-.055em;margin:0}
+    .lead{font-size:18px;color:#aeb6bd;max-width:720px;margin-top:20px}
+    .about{display:grid;grid-template-columns:1.3fr .7fr;gap:70px}.about p{font-size:19px;color:#c0c6cb}
+    .facts{border-top:1px solid var(--line)}.fact{padding:18px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;font-size:13px}.fact span{color:var(--muted)}.fact b{font-weight:600;text-align:right}
+    .stack{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .stack-card{padding:28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:170px}.stack-card h3{font-size:14px;margin:0 0 18px}.stack-card p{font:12px/1.8 "DM Mono",monospace;color:var(--muted);margin:0}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.project{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:.25s ease}.project:hover{border-color:#465058;transform:translateY(-3px)}
+    .project-visual{height:260px;background:var(--panel-2);position:relative;overflow:hidden}
+    .project-visual:before{content:"";position:absolute;inset:25px;background:linear-gradient(90deg,transparent 49.5%,rgba(184,255,90,.18) 50%,transparent 50.5%),linear-gradient(transparent 49.5%,rgba(184,255,90,.12) 50%,transparent 50.5%);background-size:34px 34px}
+    .trace{position:absolute;left:11%;right:11%;top:50%;height:1px;background:var(--accent);box-shadow:0 0 18px rgba(184,255,90,.25);transform:rotate(-3deg)}
+    .trace:before,.trace:after{content:"";position:absolute;border:1px solid var(--accent);width:8px;height:8px;border-radius:50%;background:var(--panel-2);top:-4px}.trace:after{right:0}
+    .project-body{padding:25px}.project-meta{display:flex;justify-content:space-between;font:11px "DM Mono",monospace;color:var(--muted);text-transform:uppercase}.project h3{font-size:25px;letter-spacing:-.035em;margin:15px 0 8px}.project p{color:var(--muted);font-size:14px;margin:0 0 20px}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{font:11px "DM Mono",monospace;border:1px solid var(--line);padding:5px 8px;border-radius:999px;color:#aeb6bd}
+    .lab{display:grid;grid-template-columns:1fr 1fr;gap:16px}.lab-card{min-height:300px;border:1px solid var(--line);border-radius:var(--radius);padding:30px;background:linear-gradient(135deg,var(--panel),#0e1113);position:relative;overflow:hidden}.lab-card h3{font-size:28px;letter-spacing:-.04em;margin:0 0 12px}.lab-card p{color:var(--muted);max-width:480px}.lab-grid{position:absolute;inset:auto 0 0;height:120px;opacity:.16;background-size:28px 28px;background-image:linear-gradient(var(--accent) 1px,transparent 1px),linear-gradient(90deg,var(--accent) 1px,transparent 1px)}
+    .timeline{border-top:1px solid var(--line)}.time-row{display:grid;grid-template-columns:150px 1fr 160px;gap:30px;padding:25px 0;border-bottom:1px solid var(--line);font-size:14px}.time-row .date{font:11px "DM Mono",monospace;color:var(--muted)}.time-row h3{margin:0 0 5px;font-size:17px}.time-row p{margin:0;color:var(--muted)}.time-row .type{text-align:right;font:11px "DM Mono",monospace;color:var(--accent)}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact h2{max-width:600px}.contact-box{border-top:1px solid var(--line)}.contact-item{padding:17px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-size:14px}.contact-item span{color:var(--muted)}
+    footer{padding:28px 0 42px;color:#667078;font:11px "DM Mono",monospace;display:flex;justify-content:space-between}
+    .placeholder{color:#7d878f;border-bottom:1px dashed #4c555c}.tiny{font:11px "DM Mono",monospace;color:#68727a}
+    @media(max-width:850px){.nav-links{display:none}.hero-grid,.about,.contact{grid-template-columns:1fr}.hero-spec{border-left:0;border-top:1px solid var(--line);padding:15px 0 0}.stack{grid-template-columns:repeat(2,1fr)}.projects,.lab{grid-template-columns:1fr}.section-head{grid-template-columns:70px 1fr;gap:20px}.time-row{grid-template-columns:90px 1fr}.time-row .type{display:none}}
+    @media(max-width:520px){.wrap{padding:0 18px}.hero{padding:72px 0}.stack{grid-template-columns:1fr}.project-visual{height:210px}section{padding:80px 0}h1{font-size:58px}}
+  </style>
+</head>
+<body>
+<nav><div class="wrap nav-inner">
+  <a class="mark" href="#">U<span>.</span></a>
+  <div class="nav-links"><a href="#about">About</a><a href="#stack">Engineering</a><a href="#projects">Projects</a><a href="#lab">Lab</a><a href="#contact">Contact</a></div>
+  <div class="nav-tag">ELECTRONIC SYSTEMS</div>
+</div></nav>
+
+<main>
+<section class="hero"><div class="wrap">
+  <div class="eyebrow">01 / Engineering portfolio</div>
+  <div class="hero-grid">
+    <div>
+      <h1>Utkarsh<span style="color:var(--accent)">.</span></h1>
+      <p class="hero-copy">Electronic Systems student at IIT Madras, building at the intersection of hardware, embedded systems and software.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects">View projects ↓</a>
+        <a class="btn" href="#contact">Contact ↗</a>
+        <a class="btn" href="#" onclick="return false">Resume <span class="tiny">[PDF PLACEHOLDER]</span></a>
+      </div>
+    </div>
+    <div class="hero-spec">
+      <div><span>PROGRAM</span><b>BS Electronic Systems</b></div>
+      <div><span>INSTITUTE</span><b>IIT Madras</b></div>
+      <div><span>FOCUS</span><b>Embedded / Hardware</b></div>
+      <div><span>LOCATION</span><b class="placeholder">[LOCATION]</b></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <div class="section-head"><div class="section-no">02 / About</div><div><h2>Engineering, measured in systems.</h2><p class="lead">A compact technical profile built around making hardware and software behave like one system.</p></div></div>
+  <div class="about">
+    <div><p>I’m Utkarsh, currently pursuing a <strong>BS in Electronic Systems at IIT Madras</strong>. My work and coursework span digital and analog electronics, embedded C, microcontrollers, Linux, programming, instrumentation and hardware-software integration.</p><p>Current portfolio material includes work with the <strong>Tiva C / TM4C123</strong> platform, PlatformIO, OLED displays, Raspberry Pi, ESC-control development, and electronics laboratory experiments.</p></div>
+    <div class="facts">
+      <div class="fact"><span>Education</span><b>IIT Madras</b></div>
+      <div class="fact"><span>Degree</span><b>BS — Electronic Systems</b></div>
+      <div class="fact"><span>Primary language</span><b>C</b></div>
+      <div class="fact"><span>Embedded</span><b>TM4C123 / PlatformIO</b></div>
+      <div class="fact"><span>Other</span><b>Linux · Python <span class="placeholder">[VERIFY]</span></b></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="stack"><div class="wrap">
+  <div class="section-head"><div class="section-no">03 / Stack</div><div><h2>Technical surface area.</h2><p class="lead">The tools and domains currently represented in the portfolio. Unverified items stay visibly marked instead of being promoted to fiction.</p></div></div>
+  <div class="stack">
+    <article class="stack-card"><h3>Electronics</h3><p>Digital systems<br>Analog circuits<br>Signals & systems<br>Circuit analysis<br>Filters / measurement</p></article>
+    <article class="stack-card"><h3>Embedded</h3><p>Embedded C<br>TM4C123 / Tiva C<br>GPIO & peripherals<br>Serial interfaces<br>Microcontroller development</p></article>
+    <article class="stack-card"><h3>Hardware</h3><p>Raspberry Pi<br>OLED displays<br>Motors / ESC concepts<br>ADALM1000<br>Prototyping</p></article>
+    <article class="stack-card"><h3>Software</h3><p>C<br>Linux<br>Git<br>PlatformIO<br><span class="placeholder">[ADD VERIFIED TOOLS]</span></p></article>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <div class="section-head"><div class="section-no">04 / Projects</div><div><h2>Build log.</h2><p class="lead">Selected engineering work. Each card is structured to become a full technical case study once the missing project data and photographs are supplied.</p></div></div>
+  <div class="projects">
+    <article class="project"><div class="project-visual"><div class="trace"></div></div><div class="project-body"><div class="project-meta"><span>01 / Embedded</span><span>[DATE]</span></div><h3>TM4C123 ESC Controller Simulator</h3><p>A pre-ESC development platform using a Tiva C LaunchPad for system arm/disarm, motor-speed input, RGB status indication and serial diagnostics.</p><div class="chips"><span class="chip">Tiva C</span><span class="chip">TM4C123</span><span class="chip">Embedded C</span><span class="chip">PlatformIO</span></div></div></article>
+    <article class="project"><div class="project-visual"><div class="trace" style="top:42%;transform:rotate(8deg)"></div></div><div class="project-body"><div class="project-meta"><span>02 / Embedded</span><span>[DATE]</span></div><h3>OLED + Raspberry Pi Interface</h3><p>OLED display integration over I²C, including address discovery, display control and a Python-based Raspberry Pi implementation.</p><div class="chips"><span class="chip">Raspberry Pi</span><span class="chip">I²C</span><span class="chip">OLED</span><span class="chip">Python</span></div></div></article>
+    <article class="project"><div class="project-visual"><div class="trace" style="top:61%;transform:rotate(-10deg)"></div></div><div class="project-body"><div class="project-meta"><span>03 / Electronics</span><span>[DATE]</span></div><h3>RC Filter Laboratory</h3><p>Hands-on low-pass and high-pass filter experimentation using an ADALM1000 and Pixelpulse2, with component selection and measurement.</p><div class="chips"><span class="chip">ADALM1000</span><span class="chip">Pixelpulse2</span><span class="chip">RC filters</span><span class="chip">Measurement</span></div></div></article>
+    <article class="project"><div class="project-visual"><div class="trace" style="top:35%;transform:rotate(-18deg)"></div></div><div class="project-body"><div class="project-meta"><span>04 / Robotics</span><span>[DATE]</span></div><h3>RopeWalker Robot</h3><p>A rope-climbing robot concept involving traction, pulley/wheel geometry, motor selection and power-system constraints.</p><div class="chips"><span class="chip">Robotics</span><span class="chip">BLDC</span><span class="chip">Mechanics</span><span class="chip">Power</span></div></div></article>
+  </div>
+  <p class="tiny" style="margin-top:18px">[ADD GITHUB LINKS · PERFORMANCE DATA · PHOTOS · SCHEMATICS · RESULTS]</p>
+</div></section>
+
+<section id="lab"><div class="wrap">
+  <div class="section-head"><div class="section-no">05 / Lab</div><div><h2>Measure. Build. Debug.</h2><p class="lead">A visual home for hardware experiments, instrumentation and the ugly but useful evidence that a system actually works.</p></div></div>
+  <div class="lab">
+    <article class="lab-card"><h3>Hardware bench</h3><p>Oscilloscope captures, circuit photographs, breadboard iterations, component choices and measurement notes.</p><div class="lab-grid"></div><div class="tiny" style="position:absolute;bottom:18px">[LAB PHOTOGRAPH / MEASUREMENT PLACEHOLDER]</div></article>
+    <article class="lab-card"><h3>System integration</h3><p>Microcontroller firmware, peripherals, serial diagnostics and hardware interfaces presented as one engineering system.</p><div class="lab-grid"></div><div class="tiny" style="position:absolute;bottom:18px">[SYSTEM DIAGRAM PLACEHOLDER]</div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="section-head"><div class="section-no">06 / Timeline</div><div><h2>Selected milestones.</h2><p class="lead">Only verified information is populated. Additions remain placeholders until supplied.</p></div></div>
+  <div class="timeline">
+    <div class="time-row"><div class="date">2025 — PRESENT</div><div><h3>BS in Electronic Systems</h3><p>Indian Institute of Technology Madras</p></div><div class="type">EDUCATION</div></div>
+    <div class="time-row"><div class="date">[DATE]</div><div><h3>[ENGINEERING MILESTONE]</h3><p>[DESCRIPTION]</p></div><div class="type">[TYPE]</div></div>
+    <div class="time-row"><div class="date">[DATE]</div><div><h3>[PROJECT / ACHIEVEMENT]</h3><p>[DESCRIPTION]</p></div><div class="type">[TYPE]</div></div>
+  </div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+  <div class="contact">
+    <div><div class="section-no">07 / Contact</div><h2 style="margin-top:22px">Let’s build something that has to work.</h2><p class="lead">Professional contact details are intentionally placeholders until the real links are provided.</p></div>
+    <div class="contact-box">
+      <a class="contact-item" href="#"><span>Email</span><b class="placeholder">[PROFESSIONAL EMAIL]</b></a>
+      <a class="contact-item" href="#"><span>GitHub</span><b class="placeholder">[GITHUB URL]</b></a>
+      <a class="contact-item" href="#"><span>LinkedIn</span><b class="placeholder">[LINKEDIN URL]</b></a>
+      <a class="contact-item" href="#"><span>Resume</span><b class="placeholder">[RESUME PDF]</b></a>
+    </div>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%"><span>UTKARSH / ELECTRONIC SYSTEMS</span><span>BUILT FOR THE REAL WORLD · [2026]</span></div></footer>
+</body>
+</html>
